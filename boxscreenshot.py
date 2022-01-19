@@ -20,8 +20,13 @@ def box_screenshot(topLeft: tuple, bottomRight: tuple, doubleCoords: bool):
   screenshot = ImageGrab.grab(bbox=(topLeftX, topLeftY, bottomRightX, bottomRightY))
   
   print("Page was ripped.")
-
+  
+  # If the screenshot is an RGBA image, convert it to RGB (usually Windows screenshots are RGB while Mac screenshots are RGBA)
   screenshot.load()
-  background = Image.new("RGB", screenshot.size, (255,255,255))
-  background.paste(screenshot, mask=screenshot.split()[3]) # 3 is the alpha channel
-  return background
+  screenshot_channels = screenshot.split()
+  if len(screenshot_channels) == 4: # Convert RGBA to RGB
+    rgb_screenshot = Image.new("RGB", screenshot.size, (255,255,255))
+    rgb_screenshot.paste(screenshot, mask=screenshot_channels[3]) # 3 is the alpha channel
+    return rgb_screenshot
+  else: # Screenshot is already RGB
+    return screenshot
