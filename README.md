@@ -15,4 +15,4 @@
 - If everything worked succesfully then a new PDF file should appear in the folder made from all of the screenshots!
 
 ## Contributing
-I've only tested this on Mac although I believe it should work on Windows and Linux as well! Feel free to make a pull request if you want to add any features or fix it for Windows / Linux :)
+I've only tested this on Mac and Windows. However, I believe it should work on Linux as well! Feel free to make a pull request if you want to add any features or fix it for Linux :)
