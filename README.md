@@ -14,5 +14,13 @@
 - The script will take control of your mouse and keyboard while it generates the PDF! Don't touch anything while it works its magic!
 - If everything worked succesfully then a new PDF file should appear in the folder made from all of the screenshots!
 
+## Tips & Tricks
+- Make the textbook pages as large as you can so you get better resolution screenshots.
+  - Make your web browser window as big as possible.
+  - Play around with zooming in/out
+  - If you are using Google Chrome you can open the developer tools menu to resize the textbook viewer better (Hit 'Command + Option + I' on Mac to open Dev. Tools).
+- The app only takes screenshots on your primary monitor. If you have two screens hooked up you can use your secondary screen to start the script while the textbook is open on your primary monitor.
+- If your images are coming out low quality try using a friend's computer with a higher resolution screen. I got great results on a Macbook Pro. The PDF quality depends on the screenshot quality. If you have a low resolution screen it will be difficult to get high resolution screenshots.
+
 ## Contributing
 I've only tested this on Mac and Windows. However, I believe it should work on Linux as well! Feel free to make a pull request if you want to add any features or fix it for Linux :)
