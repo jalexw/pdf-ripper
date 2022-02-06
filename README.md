@@ -1,5 +1,7 @@
 # BibliU PDF Ripper
 
+Use this code to get a PDF from BibliU by automatically looping through your textbook and taking a screenshot of each page.
+
 ## Installation
 ### 1. Install [Python3](https://www.python.org/downloads/) 
 Check if you already have it installed with the `python --version` command)
