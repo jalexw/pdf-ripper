@@ -53,7 +53,7 @@ def write_page_number(x: int, y: int, pageNumber: str):
 def rip(config):
   # Break up the configuration passed to the function
 
-  # The number of pages to be ripped
+  # The number of pages in the textbook
   num_pages = config[0]
 
   # The area of the page to be ripped/screenshot
@@ -63,31 +63,45 @@ def rip(config):
   # The position of the page selection box
   page_selection_box_coordinates = config[2]
 
+  # Whether coordinates should be doubled to get the correct screenshot area
+  double_coordinates = config[3]
+
+  # Rip all pages or just a subset of them?
+  start_page = config[4]
+  end_page = config[5]
+
   # Print out the configuration
   print("Configuration:")
-  print("  Number of pages: " + str(num_pages))
-  print("  Screenshot box coordinates:")
-  print("    Top left: " + str(topLeft))
-  print("    Bottom right: " + str(bottomRight))
-  print("  Page selection box coordinates: " + str(config[2]))
-  print("  Double Coordinates?: " + str(config[3]))
+  print("\tPages to rip:")
+  print("\t\tTotal number of pages in textbook: " + str(num_pages))
+  print("\t\tPage # to start on: " + str(start_page))
+  print("\t\tPage # to end on: " + str(end_page))
+  print("\tScreenshot box coordinates:")
+  print("\t\tTop left: " + str(topLeft))
+  print("\t\tBottom right: " + str(bottomRight))
+  print("\t\tPage selection box coordinates: " + str(config[2]))
+  print("\tDouble Coordinates?: " + str(double_coordinates))
+
+  sleep(2)
 
   # Initialize the list of screenshots
   screenshots = []
 
   # Loop through each page of the book taking a screenshot and adding to the list
-  for i in range(1, num_pages + 1):
+  for i in range(start_page, end_page + 1):
     print("") # spacing
 
     # Write the page number to the page selection box
-    print("Going to page " + str(i) + " of " + str(num_pages))
+    print("Going to page " + str(i) + " of " + str(num_pages) + "...")
     write_page_number(page_selection_box_coordinates[0], page_selection_box_coordinates[1], str(i))
-    
     # The page should now be at the correct page number.
+
+    # Wait a little bit to allow the page to fully load
+    sleep(modify_delay_randomly(0.5))
 
     # Take a screenshot of the page
     print("Ripping page " + str(i) + " of " + str(num_pages))
-    screenshot = box_screenshot(topLeft, bottomRight, config[3])
+    screenshot = box_screenshot(topLeft, bottomRight, double_coordinates)
 
     # Add the screenshot to the list
     screenshots.append(screenshot)

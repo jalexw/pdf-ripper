@@ -6,8 +6,28 @@ from timeutils import five_second_timer, short_pause
 
 # Have the user type in the number of pages in the document
 def get_number_of_pages():
-  print("How many pages are in the document you are trying to copy?")
-  return int(input())
+  print("How many pages are in the textbook you are trying to copy?")
+  n_pages = int(input())
+
+  print("What page do you want to start at? Leave blank to start at page 1.")
+  start_page = input()
+  if start_page == "":
+    start_page = 1
+  else:
+    start_page = int(start_page)
+  if start_page < 1 or start_page > n_pages:
+    raise Exception("Page number out of range. Please try again.")
+
+  print("What page do you want to end on? Leave blank to end on the last page.")
+  end_page = input()
+  if end_page == "":
+    end_page = n_pages
+  else:
+    end_page = int(end_page)
+  if end_page < 1 or end_page > n_pages or end_page < start_page:
+    raise Exception("Ending page number out of range. Please try again.")
+  
+  return n_pages, start_page, end_page
 
 # This function will get the coordinates of the top left and bottom right corners of the area to be screenshot.
 def get_screenshot_box():
@@ -45,7 +65,7 @@ def should_coords_be_doubled():
 def setup():
   short_pause()
 
-  n_pages = get_number_of_pages()
+  n_pages, start_page, end_page = get_number_of_pages()
 
   short_pause()
 
@@ -61,4 +81,4 @@ def setup():
 
   short_pause()
 
-  return n_pages, (topLeftCoords, bottomRightCoords), (page_selection_box_X, page_selection_box_Y), should_coords_be_doubled_bool
+  return n_pages, (topLeftCoords, bottomRightCoords), (page_selection_box_X, page_selection_box_Y), should_coords_be_doubled_bool, start_page, end_page

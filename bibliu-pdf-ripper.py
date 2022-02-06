@@ -1,8 +1,7 @@
-# This program aims to make it easy to rip a PDF from the unbelievably
-# awful bibliu.com website that makes it impossible to annotate the
-# online textbooks which you have purchased. I wrote this so I could
-# highlight / draw in the GoodNotes app and do business cases "within"
-# the textbook.
+# This program aims to make it easy to rip a PDF from the awful bibliu.com 
+# web application that makes it impossible to annotate the online 
+# textbooks which you have purchased. I wrote this program so I could
+# highlight / draw in the GoodNotes app and not to redistibute the textbooks
 
 from setup import setup
 from ripper import rip
@@ -23,7 +22,6 @@ screenshots = rip(config)
 print("All screenshots collected. Combining into PDF file now.")
 
 # Generate output
-output_file_name = "bibliu_sucks.pdf"
-combine_images_into_pdf(screenshots, output_file_name)
+output_file_name = combine_images_into_pdf(screenshots)
 
 print("Done! Enjoy your PDF! (Saved to " + output_file_name + ")")
