@@ -72,14 +72,17 @@ def rip(config):
 
   # Print out the configuration
   print("Configuration:")
-  print("  Total number of pages in textbook: " + str(num_pages))
-  print("  Page # to start on: " + str(start_page))
-  print("  Page # to end on: " + str(end_page))
-  print("  Screenshot box coordinates:")
-  print("    Top left: " + str(topLeft))
-  print("    Bottom right: " + str(bottomRight))
-  print("  Page selection box coordinates: " + str(config[2]))
-  print("  Double Coordinates?: " + str(double_coordinates))
+  print("\tPages to rip:")
+  print("\t\tTotal number of pages in textbook: " + str(num_pages))
+  print("\t\tPage # to start on: " + str(start_page))
+  print("\t\tPage # to end on: " + str(end_page))
+  print("\tScreenshot box coordinates:")
+  print("\t\tTop left: " + str(topLeft))
+  print("\t\tBottom right: " + str(bottomRight))
+  print("\t\tPage selection box coordinates: " + str(config[2]))
+  print("\tDouble Coordinates?: " + str(double_coordinates))
+
+  sleep(2)
 
   # Initialize the list of screenshots
   screenshots = []
@@ -91,8 +94,10 @@ def rip(config):
     # Write the page number to the page selection box
     print("Going to page " + str(i) + " of " + str(num_pages) + "...")
     write_page_number(page_selection_box_coordinates[0], page_selection_box_coordinates[1], str(i))
-    
     # The page should now be at the correct page number.
+
+    # Wait a little bit to allow the page to fully load
+    sleep(modify_delay_randomly(0.5))
 
     # Take a screenshot of the page
     print("Ripping page " + str(i) + " of " + str(num_pages))
