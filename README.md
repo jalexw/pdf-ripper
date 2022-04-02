@@ -43,9 +43,8 @@ Install with the command `pip3 install Pillow`. If you don't have it installed, 
 
 ### 5. The script takes control of your device
 - The script will take control of your mouse and keyboard while it takes screenshots for the PDF! Don't touch anything while it works its magic! 
-- On Mac, a pop-up should make you allow the script to record your screen and use accessibility services.
-
-### 6. Screenshots are combined into a PDF file in the `bibliu-pdf-ripper/output/` folder
+- On Mac, a pop-up should make you allow the script to record your screen and use accessibility services.12
+- Screenshots are combined into a PDF file in the `bibliu-pdf-ripper/output/` folder
 - If everything worked succesfully then a new PDF file should appear in the `output` folder made from all of the screenshots!
 
 ## Contributing
