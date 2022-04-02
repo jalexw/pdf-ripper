@@ -4,26 +4,27 @@ Use this code to get a PDF from BibliU by automatically looping through your tex
 
 ## Installation
 ### 1. Install [Python3](https://www.python.org/downloads/) 
-Check if you already have it installed with the `python --version` command)
+Check if you already have it installed or if it already exists with the `python3 --version` command in your Terminal / Command Prompt)
 
-### 2. Install the required package [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
-Use the command `pip3 install pyautogui`
+### 2. Install the required python package [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
+Install with the command `pip3 install pyautogui`. If you don't have it installed, you will get an error that looks like: `ModuleNotFoundError: No module named 'pyautogui'`.
 
-### 3. Download the free source code in the repository
+### 3. Install the required python package [Pillow](https://pillow.readthedocs.io/en/stable/)
+Install with the command `pip3 install Pillow`. If you don't have it installed, you will get an error that looks like: `ModuleNotFoundError: No module named 'PIL'`.
 
- - #### 3a. Download as a ZIP archive by hitting the green 'Code' button at the top of this page, then hitting 'Download ZIP'. Extract the code in the ZIP archive to your Desktop.
+### 4. Download the python code in the repository
 
- - #### 3b. Or, Clone this repository with git: `git clone https://github.com/jalexw/bibliu-pdf-ripper.git`
+ - #### 4a. Download as a ZIP archive by hitting the green 'Code' button at the top of this page, then hitting 'Download ZIP'. Extract the code in the ZIP archive to your Desktop.
 
+ - #### 4b. Or, Clone this repository with git using the command: `git clone https://github.com/jalexw/bibliu-pdf-ripper.git`
 
 ## Usage / Execution
 ### 1. Open your textbook in the BibliU web application
 - Open up BibliU on the web to the textbook you would like to rip. 
-- If you are using Google Chrome you can open the developer tools menu (Hit 'Command + Option + I' on Mac) to resize the textbook page better. BibliU doesn't allow you to right click such that you can open Developer Tools, however, you can do this from the menu in the top right corner of Google Chrome (or with 'Command + Option + I' on Mac).
-  
 
 ### 2. Resize your browser window to get the screenshots as big as you can
 - Screenshots are only taken on your primary monitor.
+- If you are using Google Chrome you can open the developer tools menu (Hit 'Command + Option + I' on Mac) to resize the textbook page better. BibliU doesn't allow you to right click such that you can open Developer Tools, however, you can do this from the menu in the top right corner of Google Chrome (or with 'Command + Option + I' on Mac).
 - It is convenient to start the script from a second monitor where the terminal doesn't block the textbook. Otherwise, 
 - Play around with zooming in/out
 
