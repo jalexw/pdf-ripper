@@ -24,7 +24,7 @@ def get_number_of_pages():
   except:
     raise Exception("Invalid integer entered or not within page range.")
 
-  print("What page do you want to end on? Leave blank to end on the last page.")
+  print("What page do you want to end on? (DEFAULT=" + n_pages + ")")
   try:
     end_page = input()
     if end_page == "":
@@ -64,7 +64,7 @@ def get_page_selection_box_coordinates():
   return X, Y
 
 def should_coords_be_doubled():
-  print("For some reason on my Mac I had to double all coordinates of the screenshot area to get correct images...")
+  print("I had to double all coordinates of the screenshot area to get correct images...")
   print("If your screenshots are not coming out right after trying one setting then try the opposite setting.")
   print("Do you want to double the coordinates? (Y/n)")
   response = input()
