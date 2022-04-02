@@ -7,25 +7,34 @@ from timeutils import five_second_timer, short_pause
 # Have the user type in the number of pages in the document
 def get_number_of_pages():
   print("How many pages are in the textbook you are trying to copy?")
-  n_pages = int(input())
+  try:
+    n_pages = int(input())
+  except:
+    raise Exception("Invalid integer entered.")
 
-  print("What page do you want to start at? Leave blank to start at page 1.")
-  start_page = input()
-  if start_page == "":
-    start_page = 1
-  else:
-    start_page = int(start_page)
-  if start_page < 1 or start_page > n_pages:
-    raise Exception("Page number out of range. Please try again.")
+  print("What page do you want to start at? (DEFAULT=1)")
+  try:
+    start_page = input()
+    if start_page == "":
+      start_page = 1
+    else:
+      start_page = int(start_page)
+    if start_page < 1 or start_page > n_pages:
+      raise Exception("Page number out of range. Please try again.")
+  except:
+    raise Exception("Invalid integer entered or not within page range.")
 
   print("What page do you want to end on? Leave blank to end on the last page.")
-  end_page = input()
-  if end_page == "":
-    end_page = n_pages
-  else:
-    end_page = int(end_page)
-  if end_page < 1 or end_page > n_pages or end_page < start_page:
-    raise Exception("Ending page number out of range. Please try again.")
+  try:
+    end_page = input()
+    if end_page == "":
+      end_page = n_pages
+    else:
+      end_page = int(end_page)
+    if end_page < 1 or end_page > n_pages or end_page < start_page:
+      raise Exception("Ending page number out of range. Please try again.")
+  except:
+    raise Exception("Invalid integer entered or not within page range.")
   
   return n_pages, start_page, end_page
 
