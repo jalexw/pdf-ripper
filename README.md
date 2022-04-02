@@ -25,13 +25,13 @@ Install with the command `pip3 install Pillow`. If you don't have it installed, 
 ### 2. Resize your browser window to get the screenshots as big as you can
 - Screenshots are only taken on your primary monitor.
 - If you are using Google Chrome you can open the developer tools menu (Hit 'Command + Option + I' on Mac) to resize the textbook page better. BibliU doesn't allow you to right click such that you can open Developer Tools, however, you can do this from the menu in the top right corner of Google Chrome (or with 'Command + Option + I' on Mac).
-- It is convenient to start the script from a second monitor where the terminal doesn't block the textbook. Otherwise, 
-- Play around with zooming in/out
+- It is convenient to start the script from a second monitor where the terminal doesn't block the textbook. Otherwise, minimize your terminal window after starting the sciprt and selecting the screenshot area.
+- Play around with zooming in/out.
 
 ### 3. Executing the automatic page scrolling and screenshotting script
 - Open your terminal / command prompt to the directory this README file is in.
   - You can change your working directory with the `cd` command. e.g. `cd ~/Desktop/bibliu-pdf-ripper` if you saved the code on your Desktop.
-  - How to run a Python program on [Windows](https://youtu.be/pFYcAOsNyvs) and [Mac](https://youtu.be/M323OL6K5vs)
+  - Links to tutorials on how to run a Python program on [Windows](https://youtu.be/pFYcAOsNyvs) and [Mac](https://youtu.be/M323OL6K5vs).
 - Run the command `python3 bibliu-pdf-ripper.py` after changing your working directory to the repository folder.
 
 ### 4. Input settings for PDF ripping
