@@ -25,7 +25,7 @@ def get_number_of_pages():
   except:
     raise Exception("Invalid integer entered or not within page range.")
 
-  print("What page do you want to end on? (DEFAULT=" + n_pages + ")")
+  print("What page do you want to end on? (DEFAULT=" + str(n_pages) + ")")
   try:
     end_page = input()
     if end_page == "":
