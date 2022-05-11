@@ -3,6 +3,7 @@
 
 from mouseposition import get_mouse_position
 from timeutils import five_second_timer, short_pause
+from config import RipConfiguration
 
 # Have the user type in the number of pages in the document
 def get_number_of_pages():
@@ -72,22 +73,25 @@ def should_coords_be_doubled():
 
 # Uses the other setup functions to collect all the necessary information as a tuple
 def setup():
-  short_pause()
-
-  n_pages, start_page, end_page = get_number_of_pages()
-
-  short_pause()
-
-  should_coords_be_doubled_bool = should_coords_be_doubled()
+  # Create a RipConfiguration object
+  config = RipConfiguration()
 
   short_pause()
 
-  topLeftCoords, bottomRightCoords = get_screenshot_box()
+  config.n_pages, config.start_page, config.end_page = get_number_of_pages()
 
   short_pause()
 
-  page_selection_box_X, page_selection_box_Y = get_page_selection_box_coordinates()
+  config.should_coords_be_doubled_bool = should_coords_be_doubled()
 
   short_pause()
 
-  return n_pages, (topLeftCoords, bottomRightCoords), (page_selection_box_X, page_selection_box_Y), should_coords_be_doubled_bool, start_page, end_page
+  config.topLeftCoords, config.bottomRightCoords = get_screenshot_box()
+
+  short_pause()
+
+  config.page_selection_box_X, config.page_selection_box_Y = get_page_selection_box_coordinates()
+
+  short_pause()
+
+  return config.n_pages, (config.topLeftCoords, config.bottomRightCoords), (config.page_selection_box_X, config.page_selection_box_Y), config.should_coords_be_doubled_bool, config.start_page, config.end_page
