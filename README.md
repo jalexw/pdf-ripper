@@ -12,11 +12,14 @@ Install with the command `pip3 install pyautogui`. If you don't have it installe
 ### 3. Install the required python package [Pillow](https://pillow.readthedocs.io/en/stable/)
 Install with the command `pip3 install Pillow`. If you don't have it installed, you will get an error that looks like: `ModuleNotFoundError: No module named 'PIL'`.
 
-### 4. Download the python code in the repository
+### 4. Install the required python package [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
+Install with the command `pip3 install pysimplegui`. If you get an error related to tkinter, see [this StackOverflow post](https://stackoverflow.com/questions/5459444/tkinter-python-may-not-be-configured-for-tk). Use brew to install python-tk to fix the problem on Mac, `brew install python-tk`.
 
- - #### 4a. Download as a ZIP archive by hitting the green 'Code' button at the top of this page, then hitting 'Download ZIP'. Extract the code in the ZIP archive to your Desktop.
+### 5. Download the python code in the repository
 
- - #### 4b. Or, Clone this repository with git using the command: `git clone https://github.com/jalexw/bibliu-pdf-ripper.git`
+ - #### 5a. Download as a ZIP archive by hitting the green 'Code' button at the top of this page, then hitting 'Download ZIP'. Extract the code in the ZIP archive to your Desktop.
+
+ - #### 5b. Or, Clone this repository with git using the command: `git clone https://github.com/jalexw/bibliu-pdf-ripper.git`
 
 ## Usage / Execution
 ### 1. Open your textbook in the BibliU web application
