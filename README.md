@@ -7,6 +7,12 @@ Use this code to rip a PDF from BibliU (or any other annoying textbook provider)
 ## Installation (for non-techy people)
 Coming soon. I'm planning on uploading standalone executable files so people don't need to understand Python to use this PDF Ripper app.
 
+### Extra Steps on Mac
+You need to grant the program permission to record your screen and control your mouse/keyboard. Find these settings at:
+- System Preferences -> Security & Privacy -> Accessibility
+- System Preferences -> Security & Privacy -> Screen Recording
+You will likely need to try running the application before `PDF-Ripper` shows up under these settings.
+
 ## Installation (from source code -- for techy people)
 ### 1. Install [Python3](https://www.python.org/downloads/) 
 Check if you already have it installed or if you installed it successfully with the `python3 --version` command in your Terminal / Command Prompt
