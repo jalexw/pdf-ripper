@@ -14,5 +14,5 @@ pillow = "*"
 python_version = "3.10"
 
 [scripts]
-run = "python3 run.py"
+start = "python3 run.py"
 dev = "python3 run.py --dev"
