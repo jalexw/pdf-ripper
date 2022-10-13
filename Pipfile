@@ -15,5 +15,7 @@ pyinstaller = "*"
 python_version = "3.10"
 
 [scripts]
-start = "python3 run.py"
-dev = "python3 run.py --dev"
+start = "python3 PDF-Ripper.py"
+dev = "python3 PDF-Ripper.py --dev"
+export = "pyinstaller --onefile --windowed --noconfirm --icon=media/icon.ico --add-data media:media PDF-Ripper.py"
+exportwindows = "pyinstaller --onefile --windowed --noconfirm --icon=media/icon.ico --add-data media;media PDF-Ripper.py"
