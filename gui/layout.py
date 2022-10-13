@@ -1,6 +1,9 @@
 # GUI Library
 import PySimpleGUI as sg
 
+# Get path to image resources (so it works in dev & PyInstaller standalone executable)
+from lib.static_resource import resource_path
+
 startPageTooltip: str = "Textbook page to start ripping from"
 endPageTooltip: str = "Textbook page to stop ripping at"
 doubleCoordsTooltip: str = "Check this if pages are not coming out correctly. My Mac needed it but not my Windows PC."
@@ -70,7 +73,7 @@ bottomRightTooltip: str = "Hover your mouse at the bottom right corner of the sc
 screenshot_area_selector = [
   [
     sg.Image( # Image showing which corners of the screenshot area to select
-      filename="media/topleftbottomright.png",
+      filename=resource_path("media/topleftbottomright.png"),
       key="screenshot_area_selector_image",
       tooltip="Select the region where screenshots should be taken after changing textbook pages"
     ),
@@ -112,7 +115,7 @@ pageChangeBoxTooltip: str = "Hover your mouse where to type new page numbers"
 page_change_box_coordinate_selector = [
   [
     sg.Image( # Image showing where the page change box is
-      filename="media/pagechangebox.png",
+      filename=resource_path("media/pagechangebox.png"),
       key="page_change_box_coordinate_selector_image",
       tooltip=pageChangeBoxTooltip
     ),
