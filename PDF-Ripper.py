@@ -8,4 +8,4 @@ if __name__ == "__main__":
     # Run the program not in dev mode
     run()
 else:
-  raise Exception("Please run this file as a script; run.py is not meant to be imported.")
+  raise Exception("Please run this file as a script; PDF-Ripper.py is not meant to be imported.")
