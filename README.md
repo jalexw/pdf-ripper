@@ -21,7 +21,7 @@ Check if you already have it installed or if you installed it successfully with 
 I installed it using [Homebrew](https://brew.sh/) on Mac with the command `brew install pipenv`
 
 ### 3. Use pipenv to install all of the project's required packages in a virtual environment
-Download this repository (i.e. `git clone https://github.com/jalexw/pdf-ripper.git`), make it your active directory (i.e. `cd pdf-ripper`), and run `pipenv install` to download all required packages defined in the `Pipfile`. If installing dev dependencies (such as [pyinstaller](https://pyinstaller.org/en/stable/index.html) for bundling the app as a standalone executable) use the `-d` flag.
+Download this repository (i.e. `git clone https://github.com/jalexw/pdf-ripper.git`), make it your active directory (i.e. `cd pdf-ripper`), and run `pipenv install` to download all required packages defined in the `Pipfile`. If installing dev dependencies (such as [pyinstaller](https://pyinstaller.org/en/stable/index.html) for bundling the app as a standalone executable) use the `--dev` flag.
 
 ### 4. Running the program
 After installation, use `pipenv run start` to start the application. Use `pipenv run dev` for additional logging if you're trying to add a feature or troubleshoot.
