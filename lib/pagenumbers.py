@@ -47,6 +47,4 @@ def write_page_number(x: int, y: int, pageNumber: str):
   # Press enter to go to the next page
   press('enter')
 
-  # Wait a little bit to allow the page to fully load before taking a screenshot
-  sleep(modify_delay_randomly(0.8))
   return

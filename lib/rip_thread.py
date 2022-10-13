@@ -5,11 +5,14 @@ import PySimpleGUI as sg
 from lib.config import RipConfiguration
 
 # Ripper Helper Functions
-from lib.pagenumbers import write_page_number
+from lib.pagenumbers import write_page_number, modify_delay_randomly
 from lib.screenshot import box_screenshot
 
 # Generates the PDF from the screenshots
 from lib.pdfgenerator import combine_images_into_pdf
+
+# Delay the thread
+from time import sleep
 
 # Update the progress bar on the GUI after each screenshot
 def sendUpdateToGUI(window: sg.Window, screenshot_index: int, total_pages: int, dev: bool = False):
@@ -54,7 +57,14 @@ def rip_thread(window: sg.Window, config: RipConfiguration, dev: bool = False):
         )
       )
 
-    write_page_number(config.pageSelectionCoords[0], config.pageSelectionCoords[1], str(i))
+    write_page_number(
+      config.pageSelectionCoords[0],
+      config.pageSelectionCoords[1],
+      str(i)
+    )
+
+    # Delay to allow page to load before taking screenshot
+    sleep(modify_delay_randomly(config.screenshotDelay))
 
     # Take a screenshot of the page
     if dev:

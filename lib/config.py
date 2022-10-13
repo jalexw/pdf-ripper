@@ -10,3 +10,4 @@ class RipConfiguration:
   pageSelectionCoords: tuple[float, float]
   doubleCoords: bool
   outputDir: str
+  screenshotDelay: float

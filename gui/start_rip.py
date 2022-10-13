@@ -28,19 +28,19 @@ def quit_before_rip_with_error_message(window: sg.Window, message: str, dev: boo
 def is_valid_coords_tuple(value, dev: bool = False):
   if (not isinstance(value, tuple) or len(value) != 2):
     if dev:
-      print("Invalid coordinate tuple (not tuple): ", value)
+      print("\tInvalid coordinate tuple (not tuple): ", value)
     return False
   elif (not isinstance(value[0], float) and not isinstance(value[0], int)):
     if dev:
-      print("Invalid value 1 of coordinate tuple (not float/int): ", value)
+      print("\tInvalid value 1 of coordinate tuple (not float/int): ", value)
     return False
   elif (not isinstance(value[1], float) and not isinstance(value[1], int)):
     if dev:
-      print("Invalid value 2 of coordinate tuple (not float/int): ", value)
+      print("\tInvalid value 2 of coordinate tuple (not float/int): ", value)
     return False
   elif (value[0] < 0 or value[1] < 0):
     if dev:
-      print("Invalid coordinate tuple (negative): ", value)
+      print("\tInvalid coordinate tuple (negative): ", value)
     return False
   return True
 
@@ -135,6 +135,15 @@ def start_rip(window: sg.Window, values, dev: bool = False):
     )
     return
 
+  screenshotDelay = values["screenshot_delay"]
+  if (not isinstance(screenshotDelay, float) or screenshotDelay < 0):
+    quit_before_rip_with_error_message(
+      window,
+      "Screenshot delay must be a positive float",
+      dev
+    )
+    return
+
   config = RipConfiguration(
     start_page=start_page,
     end_page=end_page,
@@ -142,7 +151,8 @@ def start_rip(window: sg.Window, values, dev: bool = False):
     topLeftCoords=topLeftCoords,
     bottomRightCoords=bottomRightCoords,
     pageSelectionCoords=pageSelectionCoords,
-    outputDir=outputDir
+    outputDir=outputDir,
+    screenshotDelay=screenshotDelay
   )
   if dev:
     print("\tStarting up ripper thread...")
