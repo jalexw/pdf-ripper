@@ -1,5 +1,7 @@
 # PDF Ripper
 
+![Screenshot of PDF Ripper GUI](https://github.com/jalexw/pdf-ripper/blob/master/media/gui_screenshot.png?raw=true)
+
 Use this code to rip a PDF from BibliU (or any other annoying textbook provider) by automatically looping through your textbook, taking a screenshot of each page, and combining the screenshots into a PDF. This project was created to allow annotating a textbook within an iPad note-taking app.
 
 ## Installation (for non-techy people)
