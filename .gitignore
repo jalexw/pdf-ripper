@@ -1,3 +1,8 @@
-/.DS_Store
+**/.DS_Store
 **/__pycache__
 /output
+
+# Ignore all files used to export an executable
+**/*.spec
+/dist
+/build
