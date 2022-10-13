@@ -1,6 +1,8 @@
+# Ignore irrelevant files used by Finder on Mac
 **/.DS_Store
+
+# Don't upload python cache files to GitHub
 **/__pycache__
-/output
 
 # Ignore all files used to export an executable
 **/*.spec
