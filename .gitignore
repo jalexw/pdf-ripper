@@ -1,0 +1,13 @@
+# Ignore irrelevant files used by Finder on Mac
+**/.DS_Store
+
+# Don't upload python cache files to GitHub
+**/__pycache__
+
+# Ignore all files used to export an executable
+**/*.spec
+/dist
+/build
+
+# Don't save Pipfile.lock to GitHub - stops from working on different operating systems
+Pipfile.lock
