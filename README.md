@@ -17,14 +17,35 @@ You will likely need to try running the application before `PDF-Ripper` shows up
 ### 1. Install [Python3](https://www.python.org/downloads/) 
 Check if you already have it installed or if you installed it successfully with the `python3 --version` command in your Terminal / Command Prompt. Install at least version 3.10.
 
-### 2. Install [pipenv](https://pypi.org/project/pipenv/) 
-I installed it using [Homebrew](https://brew.sh/) on Mac with the command `brew install pipenv`
+### 2. Download this repository
 
-### 3. Use pipenv to install all of the project's required packages in a virtual environment
-Download this repository (i.e. `git clone https://github.com/jalexw/pdf-ripper.git`), make it your active directory (i.e. `cd pdf-ripper`), and run `pipenv install` to download all required packages defined in the `Pipfile`. If installing dev dependencies (such as [pyinstaller](https://pyinstaller.org/en/stable/index.html) for bundling the app as a standalone executable) use the `--dev` flag.
+Download this repository (i.e. `git clone https://github.com/jalexw/pdf-ripper.git`). Or hit the big green button and download as a ZIP archive.
+
+### 3. Install dependencies
+
+Follow either approach 3a or 3b. I prefer the [pipenv](https://pypi.org/project/pipenv/)  approach, but the pip approach is likely easier as it should come bundled with your Python and not require 
+
+#### 3a. Install [pipenv](https://pypi.org/project/pipenv/) and run the virtual environment defined in the `Pipfile`
+I installed pipenv using [Homebrew](https://brew.sh/) on Mac with the command `brew install pipenv`
+
+Set the repository to be your active directory (i.e. `cd pdf-ripper`), and run `pipenv install` to download all required packages defined in the `Pipfile`. If installing dev dependencies (such as [pyinstaller](https://pyinstaller.org/en/stable/index.html) for bundling the app as a standalone executable) use the `--dev` flag.
+
+#### 3b. Install dependencies with pip
+Run `pip install -r Requirements.txt`
+
+If the command `pip` isn't found, try replacing with something like: `pip3`, `python3 -m pip`
 
 ### 4. Running the program
 After installation, use `pipenv run start` to start the application. Use `pipenv run dev` for additional logging if you're trying to add a feature or troubleshoot.
+
+If you're using `pip` instead of `pipenv`, run: 
+```bash
+python3 PDF-Ripper.py
+```
+Alternatively, with additional logging:
+```bash
+python3 PDF-Ripper.py --dev
+```
 
 ### Known Errors
 - If you get an error on Mac related to tkinter, see [this StackOverflow post](https://stackoverflow.com/questions/5459444/tkinter-python-may-not-be-configured-for-tk). You may need to use [Homebrew](https://brew.sh/) to install python-tk to fix the problem on Mac, `brew install python-tk`.
