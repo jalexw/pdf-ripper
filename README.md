@@ -1,6 +1,6 @@
 # PDF Ripper
 
-![Screenshot of PDF Ripper GUI](https://github.com/jalexw/pdf-ripper/blob/master/media/gui_screenshot.png?raw=true)
+![Screenshot of PDF Ripper GUI](https://github.com/jalexw/pdf-ripper/blob/main/media/gui_screenshot.png?raw=true)
 
 Use this code to rip a PDF from a desktop textbook app by automatically looping through your textbook, taking a screenshot of each page, and combining the screenshots into a PDF. This project was created to allow annotating a textbook within an iPad note-taking app.
 
